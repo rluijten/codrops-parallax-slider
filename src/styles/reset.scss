@@ -1,0 +1,117 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set font smoothing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+
+  // width: 100vw;
+
+  overflow-y: scroll;
+
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  text-size-adjust: 100%;
+
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  vertical-align: baseline;
+
+  background: transparent;
+
+  border: 0;
+
+  appearance: none;
+
+  outline: none;
+}
+
+a {
+  color: var(--color-grey-darker);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+select {
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+}

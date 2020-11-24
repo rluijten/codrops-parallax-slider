@@ -1,0 +1,15 @@
+// config
+@import './styles/fonts.scss';
+@import './styles/vars.scss';
+@import './styles/reset.scss';
+@import './styles/aspect-ratio.scss';
+@import './styles/base.scss';
+@import './styles/type.scss';
+@import './styles/container.scss';
+@import './styles/button.scss';
+
+// components
+@import './components/button-slider-open/button-slider-open.scss';
+@import './components/content/content.scss';
+@import './components/placeholders/placeholders.scss';
+@import './components/slider/slider.scss';

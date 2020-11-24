@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crafting a Parallax slider</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/gll7dfd.css">
+</head>
+<body>
+  <div class="app">
+    <main>
+      <!-- <button type="button" class="button-slider-open js-slider-open">
+        hover
+      </button> -->
+
+      <button
+        class="button-slider-open js-slider-open"
+        type="button"
+        aria-label="button open slider"
+      >
+        <svg class="button-slider-open__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.68 11.617">
+          <path class="button-slider-open__icon-square" d="M2.636 11.617H.181A.177.177 0 010 11.436V8.981A.177.177 0 01.181 8.8h2.442a.177.177 0 01.181.181v2.442a.17.17 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M6.073 11.617H3.618a.177.177 0 01-.181-.181V8.981a.177.177 0 01.181-.181H6.06a.177.177 0 01.181.181v2.442a.178.178 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M9.51 11.617H7.055a.177.177 0 01-.181-.181V8.981a.177.177 0 01.181-.181h2.442a.177.177 0 01.181.181v2.442a.178.178 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M2.636 8.18H.181A.177.177 0 010 7.999V5.544a.177.177 0 01.181-.181h2.442a.177.177 0 01.181.181v2.442a.17.17 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M6.073 7.65H3.618a.177.177 0 01-.181-.181V5.014a.177.177 0 01.181-.181H6.06a.177.177 0 01.181.181v2.442a.178.178 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M9.51 6.849H7.055a.177.177 0 01-.181-.181V4.213a.177.177 0 01.181-.181h2.442a.177.177 0 01.181.181v2.442a.171.171 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M2.636 4.742H.181A.177.177 0 010 4.561V2.106a.177.177 0 01.181-.181h2.442a.177.177 0 01.181.181v2.442a.17.17 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M6.073 3.605H3.618a.177.177 0 01-.181-.181V.969a.177.177 0 01.181-.181H6.06a.177.177 0 01.181.181v2.442a.171.171 0 01-.168.194z" />
+          <path class="button-slider-open__icon-square" d="M9.51 2.8H7.055a.177.177 0 01-.181-.181V.181A.177.177 0 017.055 0h2.442a.177.177 0 01.181.181v2.442a.166.166 0 01-.168.177z" />
+        </svg>
+      </button>
+
+      <!-- CONTENT-->
+      <section class="content js-content">
+        <div class="container">
+          <div class="content__subheadings">
+            <span class="content__subheading is-md">S00192 /</span>
+            <span class="content__subheading is-sm">side / orange / 11:40 AM</span>
+          </div>
+
+          <h2 class="content__heading">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+          </h2>
+        </div>
+      </section>
+      <!-- END CONTENT-->
+
+      <!-- PLACEHOLDERS -->
+      <div class="placeholders js-placeholders">
+        <div class="placeholders__img-wrap js-img-wrap" style="--aspect-ratio: 0.8;">
+          <img
+            src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+            alt="building"
+            class="placeholders__img"
+          >
+        </div>
+
+        <div class="placeholders__img-wrap js-img-wrap" style="--aspect-ratio: 0.8;">
+          <img
+            src="https://images.unsplash.com/photo-1566688342604-dbe3e7357104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80&ar=0.8"
+            alt="building"
+            class="placeholders__img"
+          >
+        </div>
+
+        <div class="placeholders__img-wrap js-img-wrap" style="--aspect-ratio: 0.8;">
+          <img
+            src="https://images.unsplash.com/photo-1472835560847-37d024ebacdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+            alt="building"
+            class="placeholders__img"
+          >
+        </div>
+      </div>
+      <!-- END PLACEHOLDERS -->
+
+      <!-- SLIDER -->
+      <div class="slider js-slider">
+        <button
+          class="slider__button-close js-slider-close"
+          type="button"
+          aria-label="close slider"
+        >
+          <svg class="slider__button-close-icon js-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205 205">
+            <g class="js-circle" fill="none" stroke="var(--color-grey-darker)">
+              <circle cx="102.5" cy="102.5" r="102"/>
+            </g>
+            <g class="js-x" fill="none" stroke="var(--color-grey-darker)" stroke-linecap="round">
+              <path d="M94 94l16.139 16.139"/>
+              <path d="M94 110.492l16.493-16.493"/>
+            </g>
+          </svg>
+        </button>
+
+        <div class="slider__container js-container" data-scroll>
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Indigo
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="indigo"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566688342604-dbe3e7357104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Rouge
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="rouge"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1472835560847-37d024ebacdc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Jaune
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="jaune"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1541320823636-40247af897bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Orange
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="orange"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566787020216-3e4f973ec5ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Vert
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="vert"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1523181729404-8a3b7b6f918d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Bleu
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="bleu"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider__item js-item" style="--aspect-ratio: 0.8;">
+            <div
+              class="slider__item-img-wrap js-img-wrap js-img"
+              style="--aspect-ratio: 0.8;"
+              data-building="building-slug"
+              data-index="1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566688342604-dbe3e7357104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80&ar=0.8"
+                alt="building"
+                class="slider__item-img"
+              >
+            </div>
+
+            <div class="slider__item-content">
+              <div class="slider__item-heading-wrap">
+                <h3 class="slider__item-heading js-heading">
+                  Violet
+                </h3>
+              </div>
+
+              <div class="slider__item-button-wrap">
+                <button
+                  class="button slider__item-button js-button"
+                  type="button"
+                  data-slug="violet"
+                >
+                  <span class="button__title-mask">
+                    <div class="button__title-wrap">
+                      <span class="button__title">Read more</span>
+                      <span class="button__title--secondary">Read more</span>
+                    </div>
+                  </span>
+
+                  <span class="button__icon">
+                    <span class="button__circle"></span>
+                    <svg class="button__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                    <svg class="button__svg button__svg--clone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.002 4.639">
+                      <path d="M.25 2.264h15.403"/>
+                      <path d="M13.743.354l1.91 1.91-1.919 2.022"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider__progress-wrap js-progress-wrap">
+          <div class="slider__progress js-progress"></div>
+        </div>
+      </div>
+      <!-- END SLIDER -->
+    </main>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

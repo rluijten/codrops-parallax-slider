@@ -1,0 +1,78 @@
+:root {
+  // colors
+  --color-black: #000;
+  --color-grey-darker: #3e3f3f;
+  --color-grey-dark: #3e3f3f;
+  --color-grey: #f7f5f4;
+  --color-white: #fff;
+
+  // type
+  --font-f-serif: 'Saol Display';
+  --font-f-sans-light: 'neue-haas-grotesk-display';
+  --font-f-sans: 'neue-haas-grotesk-text';
+
+  --font-s-heading-sm: 8.333vw;
+  --lh-heading-sm: 10.556vw;
+
+  --font-s-chapeau-md: 4.444vw;
+  --lh-chapeau-md: 9.167vw;
+
+  --font-s-chapeau-sm: 3.611vw;
+  --lh-chapeau-sm: 3.611vw;
+
+  --font-s-body: 4.444vw;
+  --lh-body: 8.333vw;
+
+  // ease
+  --ease-button: cubic-bezier(0.34, 0, 0.18, 1);
+
+  // spacings
+  --spacing-15: 4.11vw;
+  --spacing-30: 8.219vw;
+  --spacing-45: 12.329vw;
+  --spacing-60: 16.438vw;
+  --spacing-75: 20vw;
+  --spacing-90: 24.658vw;
+  --spacing-120: 32.877vw;
+  --spacing-150: 40vw;
+  --spacing-180: 49.315vw;
+
+  --col-1: calc(100vw / 12 * 1);
+  --col-2: calc(100vw / 12 * 2);
+  --col-3: calc(100vw / 12 * 3);
+  --col-4: calc(100vw / 12 * 4);
+  --col-5: calc(100vw / 12 * 5);
+  --col-6: calc(100vw / 12 * 6);
+  --col-7: calc(100vw / 12 * 7);
+  --col-8: calc(100vw / 12 * 8);
+  --col-9: calc(100vw / 12 * 9);
+  --col-10: calc(100vw / 12 * 10);
+  --col-11: calc(100vw / 12 * 11);
+  --col-12: calc(100vw / 12 * 12);
+
+  @media (min-width: 768px) {
+    // type
+    --font-s-heading-sm: 3.472vw;
+    --lh-heading-sm: 4.583vw;
+
+    --font-s-chapeau-md: 1.25vw;
+    --lh-chapeau-md: 1.597vw;
+
+    --font-s-chapeau-sm: 0.903vw;
+    --lh-chapeau-sm: 0.903vw;
+
+    --font-s-body: 1.111vw;
+    --lh-body: 2.083vw;
+
+    // spacings
+    --spacing-15: 1.042vw;
+    --spacing-30: 2.083vw;
+    --spacing-45: 3.125vw;
+    --spacing-60: 4.167vw;
+    --spacing-75: 5.208vw;
+    --spacing-90: 6.25vw;
+    --spacing-120: 8.333vw;
+    --spacing-150: 10.417vw;
+    --spacing-180: 12.5vw;
+  }
+}

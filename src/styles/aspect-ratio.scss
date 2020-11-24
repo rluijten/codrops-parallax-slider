@@ -1,0 +1,27 @@
+[style*='--aspect-ratio'] > *:first-child,
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+@supports (--custom:property) {
+  [style*='--aspect-ratio'] {
+    position: relative;
+
+    overflow: hidden;
+  }
+
+  [style*='--aspect-ratio']::before {
+    content: '';
+
+    display: block;
+
+    padding-bottom: calc(100% / var(--aspect-ratio));
+  }
+}
