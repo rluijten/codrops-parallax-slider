@@ -29,6 +29,10 @@ Create the build:
 npm run build
 ```
 
+## Credits
+
+- Images from [Unsplash](https://unsplash.com/)
+
 ## Misc
 
 Follow Ruud Luijten: [Twitter](https://twitter.com/rluijtenant), [GitHub](https://github.com/rluijten)
